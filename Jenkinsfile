@@ -17,6 +17,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                        #!/bin/bash
                         echo "Triggering Deploy Job ..."
                         aws update-kubeconfig --region ${REGION} --name ${PROJECT}-${params.deploy_to}
 
