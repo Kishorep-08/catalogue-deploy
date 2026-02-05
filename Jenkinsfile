@@ -16,14 +16,15 @@ pipeline {
         stage ('Deploy Job') {
             steps {
                 script {
-                    sh """
-                        
-                        echo "Triggering Deploy Job ..."
-                        aws eks update-kubeconfig --region ${REGION} --name ${PROJECT}-${params.deploy_to}
-                        kubectl get nodes
+                    withAWS(region:'us-east-1',credentials:'aws-auth') {
+                        sh """
+                            
+                            echo "Triggering Deploy Job ..."
+                            aws eks update-kubeconfig --region ${REGION} --name ${PROJECT}-${params.deploy_to}
+                            kubectl get nodes
 
-                    """
-                
+                        """
+                    }                
                 }
             }
         }
