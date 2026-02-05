@@ -1,5 +1,6 @@
 deployment:
-  imageRepo: kishore8856/catalogue
-  imageVersion: v2
+  imageRepo: 368903465982.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
+  # Build once run anywhere: We built the image once and this image can be used across all environments.
+  imageVersion: IMAGE_VERSION
 service:
   servicePort: 8080 # default value
