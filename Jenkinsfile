@@ -7,11 +7,12 @@ properties([
     ])
 ])
 
-def call(Map configMap) {
+def configMap = [
     project: "roboshop",
     component: "catalogue",
     appVersion: (params.appVersion),
     deploy_to: (params.deploy_to)
-}
+]
+    
 
 EKSDeploy(configMap)
