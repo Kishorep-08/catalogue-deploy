@@ -19,7 +19,8 @@ pipeline {
                     sh """
                         
                         echo "Triggering Deploy Job ..."
-                        aws update-kubeconfig --region ${REGION} --name ${PROJECT}-${params.deploy_to}
+                        aws eks update-kubeconfig --region ${REGION} --name ${PROJECT}-${params.deploy_to}
+                        kubectl get nodes
 
                     """
                 
