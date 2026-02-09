@@ -1,5 +1,5 @@
 deployment:
-  imageRepo: 368903465982.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
+  imageRepo: 997416683845.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
   # Build once run anywhere: We built the image once and this image can be used across all environments.
   imageVersion: IMAGE_VERSION
 service:
